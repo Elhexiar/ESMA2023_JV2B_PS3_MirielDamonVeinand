@@ -102,7 +102,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   leftSlice: {fileID: 9151855196247639203}
   rightSlice: {fileID: 9089426453147877757}
-  sprite: {fileID: 0}
+  sprite: {fileID: 2110464887368623454}
   sliced: 0
 --- !u!61 &5504488664914878623
 BoxCollider2D:
