@@ -22,9 +22,9 @@ public class MeatBehaviour : MonoBehaviour
 
     private void OnMouseDown()
     {
-        
+
         leftSlice.SetActive(true);
-        leftSlice.GetComponent<Rigidbody2D>().AddForce( new Vector3 (30, 0, 0) );
+        leftSlice.GetComponent<Rigidbody2D>().AddForce(new Vector3(30, 0, 0));
         leftSlice.GetComponent<Rigidbody2D>().angularVelocity = -30;
         rightSlice.SetActive(true);
         rightSlice.GetComponent<Rigidbody2D>().AddForce(new Vector3(-30, 0, 0));
@@ -32,7 +32,7 @@ public class MeatBehaviour : MonoBehaviour
 
         sliced = true;
         sprite.enabled = false;
-        
+
 
     }
     private void OnTriggerEnter2D(Collider2D collision)

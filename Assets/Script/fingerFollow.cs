@@ -29,7 +29,7 @@ public class MonScript : MonoBehaviour
         if (Input.touchCount > 0)
         {
             Camera mainCamera = Camera.main;
-            tempPosition = new Vector3(Input.touches[0].position.x, Input.touches[0].position.y, mainCamera.nearClipPlane + 10);
+            tempPosition = new Vector3(Input.touches[0].position.x, Input.touches[0].position.y, mainCamera.nearClipPlane + 10-0.3f);
             delta = Input.touches[0].deltaPosition;
             delta.Normalize();
             
