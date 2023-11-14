@@ -13,6 +13,7 @@ public class MonScript : MonoBehaviour
     public Vector3 position;
     public Quaternion newRotation;
     public float normalizedRot;
+    public float lastAvailableRot;
     // Start is called before the first frame update
     void Start()
     {
@@ -35,13 +36,19 @@ public class MonScript : MonoBehaviour
             
             normalizedRot = 180+Mathf.Atan2(delta.y, delta.x) * 180 / 3.14f;
 
-            transform.rotation = Quaternion.Euler(0,0, normalizedRot);
-            
-            
+            transform.eulerAngles = new Vector3 (0, 0, normalizedRot);
+
+            lastAvailableRot = normalizedRot;
+
+
             //transform.rotation.SetEulerRotation(0, 0, normalizedRot);
             //transform.rotation.Set(0, 0, normalizedRot);
 
             transform.position = mainCamera.ScreenToWorldPoint(tempPosition);
+        }
+        else
+        {
+            transform.eulerAngles = new Vector3(0, 0, lastAvailableRot);
         }
 
     }
