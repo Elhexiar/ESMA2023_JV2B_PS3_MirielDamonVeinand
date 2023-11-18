@@ -8,10 +8,18 @@ public class ZoneManager : MonoBehaviour
 
     public List<GameObject> zonesList = new List<GameObject>();
     [SerializeField] private int CurrentZoneIndex;
+    private StepsManager myStepsManager;
     // Start is called before the first frame update
     void Start()
     {
-        
+
+        // Makes Sure that only the first zone is active
+        foreach (var item in zonesList)
+        {
+            item.SetActive(false);
+        }
+        zonesList[0].SetActive(true);
+        myStepsManager = GetComponentInParent<StepsManager>();
     }
 
     // Update is called once per frame
@@ -52,8 +60,21 @@ public class ZoneManager : MonoBehaviour
 
                     Debug.Log("SUCCES");
                     zonesList[CurrentZoneIndex].GetComponent<SpriteRenderer>().color = Color.white;
+                    if (zonesList[CurrentZoneIndex].GetComponent<PathZoneInfo>().hideAfterTouch)
+                    {
+                        zonesList[CurrentZoneIndex].SetActive(false);
+                    }
+
                     CurrentZoneIndex++;
-                    zonesList[CurrentZoneIndex].SetActive(true);
+                    if (CurrentZoneIndex >= zonesList.Count) {
+                        myStepsManager.nextStepInvoked = true;
+                    }
+                    else
+                    {
+                        zonesList[CurrentZoneIndex].SetActive(true);
+                    }
+                    
+                    
                 }
             }
 
