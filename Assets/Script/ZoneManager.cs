@@ -53,6 +53,7 @@ public class ZoneManager : MonoBehaviour
                     Debug.Log("SUCCES");
                     zonesList[CurrentZoneIndex].GetComponent<SpriteRenderer>().color = Color.white;
                     CurrentZoneIndex++;
+                    zonesList[CurrentZoneIndex].SetActive(true);
                 }
             }
 

@@ -13,6 +13,10 @@ public class LaunchSlicingGame : MonoBehaviour
         SceneManager.LoadScene("Slice");
     }
 
+    public void StartGalette()
+    {
+        SceneManager.LoadScene("Galettage");
+    }
     // Start is called before the first frame update
     void Start()
     {
