@@ -9,6 +9,7 @@ public class ZoneManager : MonoBehaviour
     public List<GameObject> zonesList = new List<GameObject>();
     [SerializeField] private int CurrentZoneIndex;
     private StepsManager myStepsManager;
+    [SerializeField] private bool currentStepConditionCompleted;
     // Start is called before the first frame update
     void Start()
     {
@@ -57,26 +58,22 @@ public class ZoneManager : MonoBehaviour
                 //Debug.Log("yo");
                 if (info.collider.gameObject == zonesList[CurrentZoneIndex])
                 {
-
-                    //Debug.Log("SUCCES");
-                    zonesList[CurrentZoneIndex].GetComponent<PathZoneInfo>().StartCoroutine("TaskToDo");
-                    /*
-                    //zonesList[CurrentZoneIndex].GetComponent<SpriteRenderer>().color = Color.white;
-                   
-                    if (zonesList[CurrentZoneIndex].GetComponent<PathZoneInfo>().hideAfterTouch)
+                
+                    if(zonesList[CurrentZoneIndex].GetComponent<PathZoneInfo>().needToBeHeld)
                     {
-                        zonesList[CurrentZoneIndex].SetActive(false);
-                    }
-                    */
+                        zonesList[CurrentZoneIndex].GetComponent<PathZoneInfo>().holdingTimer++;
+                        if(zonesList[CurrentZoneIndex].GetComponent<PathZoneInfo>().holdingTimer >= zonesList[CurrentZoneIndex].GetComponent<PathZoneInfo>().holdingTimerLimit)
+                        {
+                            ProceedToNextZone();
+                        }
 
-                    CurrentZoneIndex++;
-                    if (CurrentZoneIndex >= zonesList.Count) {
-                        myStepsManager.nextStepInvoked = true;
+
                     }
                     else
                     {
-                        zonesList[CurrentZoneIndex].SetActive(true);
+                        ProceedToNextZone();
                     }
+                    
                     
                     
                 }
@@ -86,4 +83,29 @@ public class ZoneManager : MonoBehaviour
         }
         
     }
+
+    void ProceedToNextZone()
+    {
+        //Debug.Log("SUCCES");
+        zonesList[CurrentZoneIndex].GetComponent<PathZoneInfo>().StartCoroutine("TaskToDo");
+        /*
+        //zonesList[CurrentZoneIndex].GetComponent<SpriteRenderer>().color = Color.white;
+
+        if (zonesList[CurrentZoneIndex].GetComponent<PathZoneInfo>().hideAfterTouch)
+        {
+            zonesList[CurrentZoneIndex].SetActive(false);
+        }
+        */
+
+        CurrentZoneIndex++;
+        if (CurrentZoneIndex >= zonesList.Count)
+        {
+            myStepsManager.nextStepInvoked = true;
+        }
+        else
+        {
+            zonesList[CurrentZoneIndex].SetActive(true);
+        }
+    }
+
 }

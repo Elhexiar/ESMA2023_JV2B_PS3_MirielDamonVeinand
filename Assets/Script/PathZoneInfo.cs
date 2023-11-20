@@ -8,6 +8,10 @@ public class PathZoneInfo : MonoBehaviour
     public bool hideAfterTouch = false;
     private GameObject currentZoneObject;
     public UnityEvent eventList;
+    public bool needToBeHeld = false;
+
+    public int holdingTimer = 0;
+    public int holdingTimerLimit = 0;
 
     public 
     // Start is called before the first frame update

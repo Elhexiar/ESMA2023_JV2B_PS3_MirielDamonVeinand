@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 1323158172908973231}
   - component: {fileID: -1218050913373415501}
   - component: {fileID: 4741700745525348384}
-  - component: {fileID: 77552809496414725}
   m_Layer: 0
   m_Name: PathZone
   m_TagString: Untagged
@@ -124,7 +123,7 @@ MonoBehaviour:
   eventList:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 77552809496414725}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: PossibleEvents, Assembly-CSharp
         m_MethodName: TurnWhite
         m_Mode: 6
@@ -136,15 +135,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &77552809496414725
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8580619332688956473}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 238a0694706795646a0f9b78ee33ce07, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  needToBeHeld: 0
+  holdingTimer: 0
+  holdingTimerLimit: 0

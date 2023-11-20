@@ -4,18 +4,19 @@ using UnityEngine;
 
 public class PossibleEvents : MonoBehaviour
 {
+
     // Start is called before the first frame update
     void Start()
     {
         
     }
 
-    public void TurnWhite(bool hideAfterTouch)
+    public void TurnWhite(GameObject zone)
     {
-        gameObject.GetComponent<SpriteRenderer>().color = Color.white;
-        if (hideAfterTouch)
+        zone.GetComponent<SpriteRenderer>().color = Color.white;
+        if (zone.GetComponent<PathZoneInfo>().hideAfterTouch)
         {
-            gameObject.SetActive(false);
+            zone.SetActive(false);
         }
 
         
