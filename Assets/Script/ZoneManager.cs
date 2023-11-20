@@ -58,12 +58,16 @@ public class ZoneManager : MonoBehaviour
                 if (info.collider.gameObject == zonesList[CurrentZoneIndex])
                 {
 
-                    Debug.Log("SUCCES");
-                    zonesList[CurrentZoneIndex].GetComponent<SpriteRenderer>().color = Color.white;
+                    //Debug.Log("SUCCES");
+                    zonesList[CurrentZoneIndex].GetComponent<PathZoneInfo>().StartCoroutine("TaskToDo");
+                    /*
+                    //zonesList[CurrentZoneIndex].GetComponent<SpriteRenderer>().color = Color.white;
+                   
                     if (zonesList[CurrentZoneIndex].GetComponent<PathZoneInfo>().hideAfterTouch)
                     {
                         zonesList[CurrentZoneIndex].SetActive(false);
                     }
+                    */
 
                     CurrentZoneIndex++;
                     if (CurrentZoneIndex >= zonesList.Count) {
