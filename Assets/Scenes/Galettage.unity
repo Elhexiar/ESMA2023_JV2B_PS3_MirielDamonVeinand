@@ -1226,6 +1226,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4741700745525348384, guid: d55601fac263ef24ca687dee597e54c8, type: 3}
+      propertyPath: hideAfterTouch
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4741700745525348384, guid: d55601fac263ef24ca687dee597e54c8, type: 3}
       propertyPath: eventList.m_PersistentCalls.m_Calls.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -2236,6 +2240,7 @@ GameObject:
   - component: {fileID: 185483501}
   - component: {fileID: 185483500}
   - component: {fileID: 185483503}
+  - component: {fileID: 185483504}
   m_Layer: 0
   m_Name: galette0
   m_TagString: Untagged
@@ -2349,6 +2354,21 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &185483504
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 185483499}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e7bce9136795ca45bc83ffa4c1362f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tempPosition: {x: 0, y: 0, z: 0}
+  position: {x: 0, y: 0, z: 0}
+  active: 0
 --- !u!1001 &185617411
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2875,6 +2895,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4741700745525348384, guid: d55601fac263ef24ca687dee597e54c8, type: 3}
       propertyPath: needToBeHeld
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4741700745525348384, guid: d55601fac263ef24ca687dee597e54c8, type: 3}
+      propertyPath: hideAfterTouch
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4741700745525348384, guid: d55601fac263ef24ca687dee597e54c8, type: 3}
@@ -5117,7 +5141,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   eggAnimator: {fileID: 0}
   currentAnimator: {fileID: 0}
-  instructionsVariable: {fileID: 0}
+  instructionsVariable: {fileID: 1735632718}
   currentHeldObject: {fileID: 0}
   nextPosition: {x: 0, y: 0, z: 0}
   textureSelectionPublicIndex: 0
@@ -5624,7 +5648,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4741700745525348384, guid: d55601fac263ef24ca687dee597e54c8, type: 3}
       propertyPath: eventList.m_PersistentCalls.m_Calls.Array.data[3].m_MethodName
-      value: SetDraggable
+      value: toggleDragBehaviour
       objectReference: {fileID: 0}
     - target: {fileID: 4741700745525348384, guid: d55601fac263ef24ca687dee597e54c8, type: 3}
       propertyPath: eventList.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
@@ -5665,7 +5689,7 @@ PrefabInstance:
     - target: {fileID: 4741700745525348384, guid: d55601fac263ef24ca687dee597e54c8, type: 3}
       propertyPath: eventList.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_ObjectArgument
       value: 
-      objectReference: {fileID: 185483499}
+      objectReference: {fileID: 185483504}
     - target: {fileID: 4741700745525348384, guid: d55601fac263ef24ca687dee597e54c8, type: 3}
       propertyPath: eventList.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.GameObject, UnityEngine
@@ -5680,7 +5704,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4741700745525348384, guid: d55601fac263ef24ca687dee597e54c8, type: 3}
       propertyPath: eventList.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.GameObject, UnityEngine
+      value: FollowScreen, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 8580619332688956473, guid: d55601fac263ef24ca687dee597e54c8, type: 3}
       propertyPath: m_Name
@@ -6526,11 +6550,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4741700745525348384, guid: d55601fac263ef24ca687dee597e54c8, type: 3}
       propertyPath: holdingTimer
-      value: 500
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4741700745525348384, guid: d55601fac263ef24ca687dee597e54c8, type: 3}
+      propertyPath: instructions
+      value: yes
       objectReference: {fileID: 0}
     - target: {fileID: 4741700745525348384, guid: d55601fac263ef24ca687dee597e54c8, type: 3}
       propertyPath: needToBeHeld
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4741700745525348384, guid: d55601fac263ef24ca687dee597e54c8, type: 3}
+      propertyPath: hideAfterTouch
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4741700745525348384, guid: d55601fac263ef24ca687dee597e54c8, type: 3}
+      propertyPath: holdingTimerLimit
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 4741700745525348384, guid: d55601fac263ef24ca687dee597e54c8, type: 3}
       propertyPath: eventList.m_PersistentCalls.m_Calls.Array.size
@@ -7316,6 +7352,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4741700745525348384, guid: d55601fac263ef24ca687dee597e54c8, type: 3}
       propertyPath: needToBeHeld
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4741700745525348384, guid: d55601fac263ef24ca687dee597e54c8, type: 3}
+      propertyPath: hideAfterTouch
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4741700745525348384, guid: d55601fac263ef24ca687dee597e54c8, type: 3}
@@ -11684,6 +11724,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4741700745525348384, guid: d55601fac263ef24ca687dee597e54c8, type: 3}
+      propertyPath: hideAfterTouch
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4741700745525348384, guid: d55601fac263ef24ca687dee597e54c8, type: 3}
       propertyPath: eventList.m_PersistentCalls.m_Calls.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -14695,6 +14739,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4741700745525348384, guid: d55601fac263ef24ca687dee597e54c8, type: 3}
+      propertyPath: hideAfterTouch
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4741700745525348384, guid: d55601fac263ef24ca687dee597e54c8, type: 3}
       propertyPath: eventList.m_PersistentCalls.m_Calls.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -17079,6 +17127,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4741700745525348384, guid: d55601fac263ef24ca687dee597e54c8, type: 3}
+      propertyPath: hideAfterTouch
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4741700745525348384, guid: d55601fac263ef24ca687dee597e54c8, type: 3}
       propertyPath: eventList.m_PersistentCalls.m_Calls.Array.size
       value: 4
       objectReference: {fileID: 0}
@@ -17088,11 +17140,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4741700745525348384, guid: d55601fac263ef24ca687dee597e54c8, type: 3}
       propertyPath: eventList.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
-      value: 5
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4741700745525348384, guid: d55601fac263ef24ca687dee597e54c8, type: 3}
       propertyPath: eventList.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
-      value: 2
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4741700745525348384, guid: d55601fac263ef24ca687dee597e54c8, type: 3}
       propertyPath: eventList.m_PersistentCalls.m_Calls.Array.data[3].m_Mode
@@ -17212,11 +17264,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4741700745525348384, guid: d55601fac263ef24ca687dee597e54c8, type: 3}
       propertyPath: eventList.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
-      value: SetTrigger
+      value: SetAnimator
       objectReference: {fileID: 0}
     - target: {fileID: 4741700745525348384, guid: d55601fac263ef24ca687dee597e54c8, type: 3}
       propertyPath: eventList.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
-      value: SetAnimator
+      value: SetTrigger
       objectReference: {fileID: 0}
     - target: {fileID: 4741700745525348384, guid: d55601fac263ef24ca687dee597e54c8, type: 3}
       propertyPath: eventList.m_PersistentCalls.m_Calls.Array.data[3].m_MethodName
@@ -17297,7 +17349,7 @@ PrefabInstance:
     - target: {fileID: 4741700745525348384, guid: d55601fac263ef24ca687dee597e54c8, type: 3}
       propertyPath: eventList.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgument
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 185483503}
     - target: {fileID: 4741700745525348384, guid: d55601fac263ef24ca687dee597e54c8, type: 3}
       propertyPath: eventList.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_StringArgument
       value: Flip
@@ -17305,7 +17357,7 @@ PrefabInstance:
     - target: {fileID: 4741700745525348384, guid: d55601fac263ef24ca687dee597e54c8, type: 3}
       propertyPath: eventList.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgument
       value: 
-      objectReference: {fileID: 185483503}
+      objectReference: {fileID: 0}
     - target: {fileID: 4741700745525348384, guid: d55601fac263ef24ca687dee597e54c8, type: 3}
       propertyPath: eventList.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_StringArgument
       value: Flip
@@ -17352,11 +17404,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4741700745525348384, guid: d55601fac263ef24ca687dee597e54c8, type: 3}
       propertyPath: eventList.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
+      value: UnityEngine.Animator, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 4741700745525348384, guid: d55601fac263ef24ca687dee597e54c8, type: 3}
       propertyPath: eventList.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Animator, UnityEngine
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 4741700745525348384, guid: d55601fac263ef24ca687dee597e54c8, type: 3}
       propertyPath: eventList.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -20534,6 +20586,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4741700745525348384, guid: d55601fac263ef24ca687dee597e54c8, type: 3}
       propertyPath: needToBeHeld
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4741700745525348384, guid: d55601fac263ef24ca687dee597e54c8, type: 3}
+      propertyPath: hideAfterTouch
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4741700745525348384, guid: d55601fac263ef24ca687dee597e54c8, type: 3}
