@@ -10,6 +10,7 @@ public class PossibleEvents : MonoBehaviour
     public TextMeshProUGUI instructionsVariable;
     public GameObject currentHeldObject;
     public Vector3 nextPosition;
+    public int textureSelectionPublicIndex = 0;
     
 
     // Start is called before the first frame update
@@ -83,6 +84,22 @@ public class PossibleEvents : MonoBehaviour
     {
         currentAnimator.SetTrigger(trigger);
 
+    }
+
+    public void setPublicTextureIndex(int index)
+    {
+        textureSelectionPublicIndex = index;
+    }
+    public void changeTexture(GameObject selectedGameObject)
+    {
+        selectedGameObject.GetComponent<SpriteRenderer>().sprite = selectedGameObject.GetComponent<PossibleTextures>().possibleTextures[textureSelectionPublicIndex];
+
+
+    }
+
+    public void toggleDragBehaviour(FollowScreen followScreenComponent)
+    {
+        followScreenComponent.active = !followScreenComponent.active;
     }
 
     public void EggCracks()
