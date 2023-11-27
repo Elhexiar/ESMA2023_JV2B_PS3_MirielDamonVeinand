@@ -10,6 +10,7 @@ public class PossibleEvents : MonoBehaviour
     public TextMeshProUGUI instructionsVariable;
     public GameObject currentHeldObject;
     public Vector3 nextPosition;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -25,6 +26,25 @@ public class PossibleEvents : MonoBehaviour
             zone.SetActive(false);
         }
  
+    }
+
+    public void ActivateGameObject(GameObject currentGameObject)
+    {
+        currentGameObject.SetActive(true);
+    }
+    public void DeactivateGameObject(GameObject currentGameObject)
+    {
+        currentGameObject.SetActive(false);
+    }
+
+    public void SetDraggable(GameObject selectedGameObject)
+    {
+        selectedGameObject.AddComponent<FollowScreen>();
+    }
+
+    public void RemoveDraggable(GameObject selectedGameObject)
+    {
+        selectedGameObject.GetComponent<FollowScreen>().active = false;
     }
 
     public void ChangeInstructions(string instructions)

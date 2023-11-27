@@ -9,6 +9,7 @@ public class FollowScreen : MonoBehaviour
     [SerializeField]
     private Vector3 tempPosition;
     public Vector3 position;
+    public bool active = true;
 
     // Start is called before the first frame update
     void Start()
@@ -19,7 +20,8 @@ public class FollowScreen : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.touchCount > 0)
+        
+        if (Input.touchCount > 0 && active)
         {
             Camera mainCamera = Camera.main;
             tempPosition = new Vector3(Input.touches[0].position.x, Input.touches[0].position.y, mainCamera.nearClipPlane + 10 - 0.3f);
