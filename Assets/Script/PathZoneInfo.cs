@@ -13,6 +13,7 @@ public class PathZoneInfo : MonoBehaviour
     public int holdingTimer = 0;
     public int holdingTimerLimit = 0;
     public string instructions;
+    public bool touchable = true;
 
     public 
     // Start is called before the first frame update

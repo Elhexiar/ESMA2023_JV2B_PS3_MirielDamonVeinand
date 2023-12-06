@@ -7,7 +7,7 @@ public class ZoneManager : MonoBehaviour
 {
 
     public List<GameObject> zonesList = new List<GameObject>();
-    [SerializeField] private int CurrentZoneIndex;
+    [SerializeField] public int CurrentZoneIndex;
     private StepsManager myStepsManager;
     [SerializeField] private bool currentStepConditionCompleted;
     // Start is called before the first frame update
@@ -37,9 +37,10 @@ public class ZoneManager : MonoBehaviour
             if(Physics.Raycast(myCamera.transform.position, touchPosWorld - myCamera.transform.position, out var info))
             {
                 //Debug.Log("yo");
-                if (info.collider.gameObject == zonesList[CurrentZoneIndex])
+
+                //Colliding zones
+                if (info.collider.gameObject == zonesList[CurrentZoneIndex] && zonesList[CurrentZoneIndex].GetComponent<PathZoneInfo>().touchable == true)
                 {
-                
                     if(zonesList[CurrentZoneIndex].GetComponent<PathZoneInfo>().needToBeHeld)
                     {
                         zonesList[CurrentZoneIndex].GetComponent<PathZoneInfo>().holdingTimer++;
@@ -47,16 +48,11 @@ public class ZoneManager : MonoBehaviour
                         {
                             ProceedToNextZone();
                         }
-
-
                     }
                     else
                     {
                         ProceedToNextZone();
                     }
-                    
-                    
-                    
                 }
             }
 

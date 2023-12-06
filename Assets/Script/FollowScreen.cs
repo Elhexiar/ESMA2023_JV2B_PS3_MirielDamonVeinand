@@ -20,6 +20,10 @@ public class FollowScreen : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(!active)
+        {
+            return;
+        }
         
         if (Input.touchCount > 0 && active)
         {
