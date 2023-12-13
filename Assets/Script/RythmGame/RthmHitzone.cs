@@ -23,22 +23,12 @@ public class RthmHitzone : MonoBehaviour, ITouchable
                 Debug.Log("CurrentPosition =" + currentCursorProgress);
                 if (currentCursorProgress >= lowerEndAcceptableHit && currentCursorProgress <= upperEndAcceptableHit)
                 {
-                    if(cursor.failed == false)
-                    {
-                        rthmGameManagerRef.IncreaseScore();
-                        cursor.succesfullyHit = true;
-                        Debug.Log("HIT");
-                        cursor.getCursorGameObject().GetComponent<SpriteRenderer>().color = Color.green;
-                    }
+                    SuccesfullHit(cursor);
                     
                 }
                 else
                 {
-                    if(cursor.succesfullyHit == false)
-                    {
-                        cursor.failed = true;
-                        cursor.getCursorGameObject().GetComponent<SpriteRenderer>().color = Color.red;
-                    }
+                    MissedHit(cursor);
                     
                 }
             }
@@ -58,6 +48,26 @@ public class RthmHitzone : MonoBehaviour, ITouchable
         
     }
 
+    public void SuccesfullHit(Cursor cursor)
+    {
+        if (cursor.failed == false)
+        {
+
+            rthmGameManagerRef.IncreaseScore();
+            cursor.succesfullyHit = true;
+            Debug.Log("HIT");
+            cursor.getCursorGameObject().GetComponent<SpriteRenderer>().color = Color.green;
+        }
+    }
+
+    public void MissedHit(Cursor cursor)
+    {
+        if (cursor.succesfullyHit == false)
+        {
+            cursor.failed = true;
+            cursor.getCursorGameObject().GetComponent<SpriteRenderer>().color = Color.red;
+        }
+    }
 
     // Start is called before the first frame update
     void Start()

@@ -2,10 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.Events;
 
 public class RthmGameManager : MonoBehaviour
 {
-    public StepsManager stepsManager;
+    public ZoneManager zoneManager;
+    public UnityEvent eventList;
+
+    public PossibleTextures attachedPossibleTexures;
+    public GameObject attachedGameObjectToAnimate;
 
     public List<Cursor> cursorList;
     public int numberOfCursors;
@@ -15,6 +20,7 @@ public class RthmGameManager : MonoBehaviour
     public int index = 0;
     public int timerLimit;
     public int score = 0;
+    public int textureIndex = 0;
 
     public TextMeshProUGUI scoreTextRef;
     // Start is called before the first frame update
@@ -50,15 +56,34 @@ public class RthmGameManager : MonoBehaviour
         else
         {
             Debug.Log("GG!!!");
-            stepsManager.nextStepInvoked = true;
+            if (attachedPossibleTexures != null)
+            {
+                textureIndex = 0;
+                attachedGameObjectToAnimate.GetComponent<SpriteRenderer>().sprite = attachedPossibleTexures.possibleTextures[textureIndex];
+            }
+            zoneManager.ProceedToNextZone();
             gameObject.SetActive(false);
         }
 
 
     }
 
+    IEnumerator DoEverySuccesfullHit()
+    {
+
+        eventList.Invoke();
+
+        yield return null;
+    }
+
     public void IncreaseScore()
     {
+        if(attachedPossibleTexures!=null)
+        {
+            textureIndex++;
+            attachedGameObjectToAnimate.GetComponent<SpriteRenderer>().sprite = attachedPossibleTexures.possibleTextures[textureIndex];
+        }
+        
         score++;
         scoreTextRef.text = score.ToString() + "/" + cursorList.Count.ToString();
     }

@@ -61,19 +61,22 @@ public class ZoneManager : MonoBehaviour
         
     }
 
-    void ProceedToNextZone()
+    public void ProceedToNextZone()
     {
         //Debug.Log("SUCCES");
         zonesList[CurrentZoneIndex].GetComponent<PathZoneInfo>().StartCoroutine("TaskToDo");
 
+        
 
         CurrentZoneIndex++;
         if (CurrentZoneIndex >= zonesList.Count)
         {
+            Debug.Log("LAST ZONE");
             myStepsManager.nextStepInvoked = true;
         }
         else
         {
+            
             zonesList[CurrentZoneIndex].SetActive(true);
         }
     }

@@ -26,10 +26,11 @@ public class StepsManager : MonoBehaviour
         CurrentListIndex++;
         if (CurrentListIndex >= stepsList.Count)
         {
-            Debug.Log("end of the Step");
+
+            //Debug.Log("end of the Step");
         }else
         {
-            Debug.Log("Next Step");
+            //Debug.Log("Next Step");
             stepsList[CurrentListIndex].SetActive(true);
         }
         
