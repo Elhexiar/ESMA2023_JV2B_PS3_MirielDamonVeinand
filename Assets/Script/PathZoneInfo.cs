@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.UIElements;
+using UnityEngine.UI;
+
 
 public class PathZoneInfo : MonoBehaviour
 {
@@ -15,11 +18,15 @@ public class PathZoneInfo : MonoBehaviour
     public string instructions;
     public bool touchable = true;
 
-    public 
+    
+    public UnityEngine.UI.Slider timeSlider;
+    public int test;
+
+     
     // Start is called before the first frame update
     void Start()
     {
-        currentZoneObject = gameObject;
+
     }
      
     IEnumerator TaskToDo()

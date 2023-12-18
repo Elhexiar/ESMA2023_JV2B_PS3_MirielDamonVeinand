@@ -32,6 +32,8 @@ public class CursorBehaviour : MonoBehaviour
         else
         {
             gameObject.transform.position = Vector3.Lerp(spawn, endLimit, currentRelativePosition);
+            
+            
         }
 
         

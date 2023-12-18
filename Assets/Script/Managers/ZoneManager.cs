@@ -19,7 +19,7 @@ public class ZoneManager : MonoBehaviour
         {
             item.SetActive(false);
         }
-        zonesList[0].SetActive(true);
+        zonesList[CurrentZoneIndex].SetActive(true);
         myStepsManager = GetComponentInParent<StepsManager>();
     }
 
@@ -41,10 +41,15 @@ public class ZoneManager : MonoBehaviour
                 //Colliding zones
                 if (info.collider.gameObject == zonesList[CurrentZoneIndex] && zonesList[CurrentZoneIndex].GetComponent<PathZoneInfo>().touchable == true)
                 {
-                    if(zonesList[CurrentZoneIndex].GetComponent<PathZoneInfo>().needToBeHeld)
+                    var currentPathInfo = zonesList[CurrentZoneIndex].GetComponent<PathZoneInfo>();
+                    if (currentPathInfo.needToBeHeld)
                     {
-                        zonesList[CurrentZoneIndex].GetComponent<PathZoneInfo>().holdingTimer++;
-                        if(zonesList[CurrentZoneIndex].GetComponent<PathZoneInfo>().holdingTimer >= zonesList[CurrentZoneIndex].GetComponent<PathZoneInfo>().holdingTimerLimit)
+                        currentPathInfo.holdingTimer++;
+                        if(currentPathInfo.timeSlider != null)
+                        {
+                            currentPathInfo.timeSlider.value = (float)currentPathInfo.holdingTimer/ (float)currentPathInfo.holdingTimerLimit;
+                        }
+                        if(currentPathInfo.holdingTimer >= currentPathInfo.holdingTimerLimit)
                         {
                             ProceedToNextZone();
                         }
