@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class OverhaulGameManager : MonoBehaviour
 {
@@ -8,7 +9,7 @@ public class OverhaulGameManager : MonoBehaviour
     public static OverhaulGameManager Instance;
 
     public List<RecipeData> recipeDataList;
-
+    public List<GameObject> pinLists;
 
     // Start is called before the first frame update
     private void Awake()
@@ -33,5 +34,10 @@ public class OverhaulGameManager : MonoBehaviour
     void Update()
     {
         
+    }
+
+    public void EnableOmelettePin()
+    {
+        pinLists[1].GetComponent<Button>().interactable = true;
     }
 }
