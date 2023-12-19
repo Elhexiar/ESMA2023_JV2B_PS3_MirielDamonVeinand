@@ -11,9 +11,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MainMenu.unity
     guid: 001614dfe8af63f458322f1de3eb8b50
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Slice.unity
     guid: 3fc8acdd13e6c734bafef6554d6fdbcd
+  - enabled: 1
+    path: Assets/Scenes/Blank.unity
+    guid: 763d268e28a03a242bf910e36c9e9df0
   - enabled: 1
     path: Assets/Scenes/Galettage.unity
     guid: a8c2bc3bfc085f6429bc5fe5c37e42c7
@@ -24,5 +27,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Omelette.unity
     guid: 2d30d17cb6a6e4f4caa1787bedf2d1eb
   m_configObjects:
+    com.unity.adaptiveperformance.google.android.provider_settings: {fileID: 11400000, guid: 7c1b35730f3632f4e8a9c4137920f114, type: 2}
     com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: 57d5cb975bb557a40b5a5e6cd5e54672, type: 2}
+    com.unity.adaptiveperformance.samsung.android.provider_settings: {fileID: 11400000, guid: 270ff962afa12394d8756fb6cd37630e, type: 2}
     com.unity.adaptiveperformance.simulator.provider_settings: {fileID: 11400000, guid: 8ced62c9f08bb4f49b5a3e07ead92951, type: 2}
