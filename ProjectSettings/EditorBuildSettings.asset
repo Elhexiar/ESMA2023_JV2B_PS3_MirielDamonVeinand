@@ -20,6 +20,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/RecipeSelectionMenue.unity
     guid: 3246876ddbdc3e44abb306efe3e64949
+  - enabled: 1
+    path: Assets/Scenes/Omelette.unity
+    guid: 2d30d17cb6a6e4f4caa1787bedf2d1eb
   m_configObjects:
     com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: 57d5cb975bb557a40b5a5e6cd5e54672, type: 2}
     com.unity.adaptiveperformance.simulator.provider_settings: {fileID: 11400000, guid: 8ced62c9f08bb4f49b5a3e07ead92951, type: 2}
