@@ -4285,14 +4285,14 @@ PrefabInstance:
     - target: {fileID: 5994721908643805799, guid: fb6d4a24e3afaf04f937607517763d86, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 124863738}
+      objectReference: {fileID: 124863740}
     - target: {fileID: 5994721908643805799, guid: fb6d4a24e3afaf04f937607517763d86, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5994721908643805799, guid: fb6d4a24e3afaf04f937607517763d86, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: 
+      value: ShowSelectionMap
       objectReference: {fileID: 0}
     - target: {fileID: 5994721908643805799, guid: fb6d4a24e3afaf04f937607517763d86, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
