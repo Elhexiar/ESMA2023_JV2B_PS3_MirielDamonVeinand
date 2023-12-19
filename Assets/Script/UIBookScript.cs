@@ -40,6 +40,6 @@ public class UIBookScript : MonoBehaviour
 
     public void GoBackToMenu()
     {
-        SceneManager.LoadScene("MainMenu");
+        SceneManager.LoadScene(0);
     }
 }

@@ -597,11 +597,11 @@ MonoBehaviour:
       - m_Target: {fileID: 454169168}
         m_TargetAssemblyTypeName: UI_GoingToRecipe, Assembly-CSharp
         m_MethodName: GoToRecipe
-        m_Mode: 5
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 4
           m_FloatArgument: 0
           m_StringArgument: Omelette
           m_BoolArgument: 0
@@ -3172,11 +3172,11 @@ MonoBehaviour:
       - m_Target: {fileID: 130739379}
         m_TargetAssemblyTypeName: UI_GoingToRecipe, Assembly-CSharp
         m_MethodName: GoToRecipe
-        m_Mode: 5
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 2
           m_FloatArgument: 0
           m_StringArgument: Galettage
           m_BoolArgument: 0
@@ -4285,14 +4285,14 @@ PrefabInstance:
     - target: {fileID: 5994721908643805799, guid: fb6d4a24e3afaf04f937607517763d86, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 124863740}
+      objectReference: {fileID: 124863738}
     - target: {fileID: 5994721908643805799, guid: fb6d4a24e3afaf04f937607517763d86, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5994721908643805799, guid: fb6d4a24e3afaf04f937607517763d86, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ShowSelectionMap
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 5994721908643805799, guid: fb6d4a24e3afaf04f937607517763d86, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName

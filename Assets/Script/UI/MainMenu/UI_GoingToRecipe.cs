@@ -18,9 +18,9 @@ public class UI_GoingToRecipe : MonoBehaviour
         
     }
 
-    public void GoToRecipe(string recipeName)
+    public void GoToRecipe(int index)
     {
-        SceneManager.LoadScene(recipeName);
+        SceneManager.LoadScene(index);
     }
 
     public void HideGoingToRecipeMenu()

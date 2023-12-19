@@ -13,17 +13,17 @@ public class GameSelection : MonoBehaviour
     public void StartSlicingGame()
     {
         Debug.Log("SliceING");
-        SceneManager.LoadScene("Slice");
+        SceneManager.LoadScene(1);
     }
 
     public void StartGalette()
     {
-        SceneManager.LoadScene("Galettage");
+        SceneManager.LoadScene(2);
     }
 
     public void StartRecipeSelectionMenue()
     {
-        SceneManager.LoadScene("RecipeSelectionMenue");
+        SceneManager.LoadScene(3);
     }
 
     public void ShowSelectionMap()

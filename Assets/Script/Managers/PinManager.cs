@@ -15,6 +15,7 @@ public class PinManager : MonoBehaviour
         {
             if (gameManager.RecipeButtonsState[i] == true)
             {
+                Debug.Log("PIN" + i);
                 pins[i].GetComponent<Button>().interactable = true;
             }
         }
