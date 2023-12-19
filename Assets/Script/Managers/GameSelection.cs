@@ -6,6 +6,9 @@ using UnityEngine.SceneManagement;
 public class GameSelection : MonoBehaviour
 {
     // Start is called before the first frame update
+    public GameObject mainMenu;
+    public GameObject selectionMap;
+    
 
     public void StartSlicingGame()
     {
@@ -22,4 +25,16 @@ public class GameSelection : MonoBehaviour
     {
         SceneManager.LoadScene("RecipeSelectionMenue");
     }
+
+    public void ShowSelectionMap()
+    {
+        selectionMap.SetActive(true);
+        mainMenu.SetActive(false);
+    }
+    public void HideSelectionMap()
+    {
+        selectionMap.SetActive(false );
+        mainMenu.SetActive(true);
+    }
+
 }

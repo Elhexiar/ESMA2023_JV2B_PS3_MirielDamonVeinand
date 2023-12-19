@@ -8,8 +8,11 @@ public class OverhaulGameManager : MonoBehaviour
 
     public static OverhaulGameManager Instance;
 
+    public int index = 0;
+
     public List<RecipeData> recipeDataList;
     public List<GameObject> pinLists;
+    public List<bool> RecipeButtonsState;
 
     // Start is called before the first frame update
     private void Awake()
@@ -36,8 +39,10 @@ public class OverhaulGameManager : MonoBehaviour
         
     }
 
-    public void EnableOmelettePin()
+    public void EnableNewRecipe()
     {
-        pinLists[1].GetComponent<Button>().interactable = true;
+        index++;
+        //pinLists[index].GetComponent<Button>().interactable = true;
+        RecipeButtonsState[index] = true;
     }
 }

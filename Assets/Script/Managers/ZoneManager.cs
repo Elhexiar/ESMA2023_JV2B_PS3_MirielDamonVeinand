@@ -77,7 +77,7 @@ public class ZoneManager : MonoBehaviour
         if (CurrentZoneIndex >= zonesList.Count)
         {
             Debug.Log("LAST ZONE");
-            myStepsManager.nextStepInvoked = true;
+            myStepsManager.NextStep();
         }
         else
         {
